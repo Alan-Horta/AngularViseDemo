@@ -1,0 +1,80 @@
+<div class="card bg-dark text-white">
+  <div class="card-header" i18n>Producto</div>
+    <div class="card-body">
+
+      <form #productoForm="ngForm"><!--(ngSubmit) = "create()"-->
+
+        <div class="form-group row mb-3">
+          <label for="nombre" class="col-form-label col-sm-2" i18n>Nombre</label>
+          <div class="col-sm-6">
+            <input type="text" class="form-control" [(ngModel)]="producto.nombre" name="nombre" required minlength="1" #nombre="ngModel">
+            <div class="alert alert-danger" *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)">
+              <div *ngIf="nombre.errors.required" i18n>
+                Nombre es requerido
+              </div>
+              <div *ngIf="nombre.errors.minlenght" i18n>
+                Nombre debe tener al menos un caracter
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group row  mb-3">
+          <label for="marca" class="col-form-label col-sm-2" i18n>Marca</label>
+          <div class="col-sm-6">
+            <input type="text" class="form-control" [(ngModel)]="producto.marca" name="marca" required minlength="1" #marca="ngModel">
+            <div class="alert alert-danger" *ngIf="marca.invalid && (marca.dirty || marca.touched)">
+              <div *ngIf="marca.errors.required" i18n>
+                Marca es requerido
+              </div>
+              <div *ngIf="marca.errors.minlenght" i18n>
+                Marca debe tener al menos un caracter
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group row  mb-3">
+          <label for="precio" class="col-form-label col-sm-2" i18n>Precio</label>
+          <div class="col-sm-6">
+            <input type="number" class="form-control" [(ngModel)]="producto.precio" name="precio" required minlength="1" #precio="ngModel">
+            <div class="alert alert-danger" *ngIf="precio.invalid && (precio.dirty || precio.touched)">
+              <div *ngIf="precio.errors.required" i18n>
+                Precio es requerido
+              </div>
+              <div *ngIf="precio.errors.minlenght" i18n>
+                Precio debe tener al menos un caracter
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group row  mb-3">
+          <label for="madein" class="col-form-label col-sm-2" i18n>Hecho en: </label>
+          <div class="col-sm-6">
+            <input type="text" class="form-control" [(ngModel)]="producto.hechoEn" name="madein" required minlength="1" #madein="ngModel">
+            <div class="alert alert-danger" *ngIf="madein.invalid && (madein.dirty || madein.touched)">
+              <div *ngIf="madein.errors.required" i18n>
+                Hecho en - es requerido
+              </div>
+              <div *ngIf="madein.errors.minlenght" i18n>
+                Hecho en - debe tener al menos un caracter
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group row  mb-3">
+          <div class="col-sm-6">
+
+            <button class="btn btn-primary" role="button" (click)='crearProducto()' *ngIf="!producto.id else conId" [disabled]="!productoForm.form.valid" i18n>Crear</button>
+            <ng-template #conId>
+              <button class="btn btn-primary" role="button" (click)='actualizarProducto()' [disabled]="!productoForm.form.valid" i18n>Editar</button>
+            </ng-template>
+
+          </div>
+        </div>
+
+      </form>
+    </div>
+</div>

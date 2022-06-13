@@ -1,0 +1,5 @@
+export const CONSTANTS = {
+  CODIGO_EXITO : '0',
+  CODIGO_ERROR_LOGICA : '1',
+  CODIGO_ERROR_SERVER : '2'
+}
