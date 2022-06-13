@@ -2,6 +2,19 @@
 
 Proyecto para el Front de SpringViseDemo
 
+## Instrucciones
+
+Usar la ultima version de [Releases](https://github.com/Alan-Horta/AngularViseDemo/releases/tag/test) se necesita colocar en un servidor apache por ejemplo WAMP donde fue probado.
+Si no descargar el repository y ejecutar manualmente con angular cli.
+
+### Internationalization
+
+Angular maneja el internationalization por deploy de App, por eso viene el Release con 2 archivos "es-MX" y "en-US", cada uno funciona de manera independiente y manda al Spring un header con "Accept-Language" para la internationalization de Spring
+
+### IP
+
+La IP que viene por default para conectarse a Spring es "http://localhost:8080/api/productos" la cual viene en el archivo main.js del respectivo release, se puede cambiar pero dejando "/api/productos"
+
 # Default
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.1.
