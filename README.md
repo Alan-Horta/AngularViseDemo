@@ -13,7 +13,7 @@ Angular maneja el internationalization por deploy de App, por eso viene el Relea
 
 ### IP
 
-La IP que viene por default para conectarse a Spring es "http://localhost:8080/api/productos" la cual viene en el archivo main.js del respectivo release, se puede cambiar pero dejando "/api/productos"
+La IP que viene por default para conectarse a Spring es `http://localhost:8080/api/productos` la cual viene en el archivo main.js del respectivo release, se puede cambiar pero dejando "/api/productos"
 
 # Default
 
